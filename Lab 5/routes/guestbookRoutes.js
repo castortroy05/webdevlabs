@@ -6,17 +6,13 @@ const controller = require('../controllers/guestbookControllers.js');
 
 router.get("/", controller.landing_page);
 
-router.get('/guestbook', function(req, res) {
-    res.redirect('/guestbook.html');
-})
+router.get('/guestbook', controller.entries_list);
 
-router.get('/new-entry', function(req, res) {
-    res.redirect('/new-entry.html')
-});
+router.get('/new', controller.new_entry);
 
-router.get('/about', function(req, res) {
-    res.redirect('/about.html');
-})
+router.get('/about', controller.about_page);
+
+router.get('/peter', controller.peters_entries_list);
 
 router.use(function(req, res) {
     res.status(404);

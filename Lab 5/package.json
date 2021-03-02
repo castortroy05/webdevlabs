@@ -9,8 +9,11 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
+    "moustache": "0.0.4",
+    "mustache": "^4.1.0",
     "nedb": "^1.8.0",
-    "node": "^15.8.0"
+    "node": "^15.10.0"
   },
+  "devDependencies": {},
   "description": ""
 }
