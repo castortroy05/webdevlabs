@@ -12,7 +12,8 @@
     "express": "^4.17.1",
     "mustache-express": "^1.3.0",
     "nedb": "^1.8.0",
-    "node": "^15.10.0"
+    "node": "^15.10.0",
+    "nodemon": "^2.0.7"
   },
   "description": "lab 6",
   "repository": {

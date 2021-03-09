@@ -7,24 +7,28 @@
     <head>
        {{>header}}
     </head>
-    <body class ="container-fluid">
+    <body class ="container">
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         <h1>{{title}}</h1>
+
+
+    
         <div class="text-right">
-            <a href="/new" class="btn btn-outline-danger">
+            <a href="/new" class="btn rounded-pill btn-outline-danger shadow">
              Write in the guest book
             </a>     
         </div>
-        <div class ="mx-auto card-deck">
+   
+        <div class ="mx-auto card-columns">
         {{#entries}}        
-            <div class="card shadow-lg" style="min-width: 30rem; max-width: 30rem;">
+            <div class="card shadow" style="min-height: 7rem; min-width: 30rem; max-width: 30rem; border-radius:5%">
                 <div class="card-header">
                     {{subject}}
                 </div>
                 <div class="card-body">
-                 <p class="card-text">
+                 <p class="card-text" style="min-height: 5rem;">
                 {{contents}}
                 </p>
             <p class="card-footer">
@@ -39,6 +43,9 @@
         No entries yet.
         {{/entries}}
         
+
+
+
         <script src="" async defer></script>
     </body>
 </html>

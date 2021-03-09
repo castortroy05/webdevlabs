@@ -8,7 +8,7 @@
         {{>header}}
      </head>
 
-    <body class= "container-fluid">
+    <body class= "container">
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -16,15 +16,19 @@
         <h2>Write a New Entry</h2>
 
         <form method="post"role="form">
-
-            <div class="form-group">
-                <label for="author">Author</label>
-                <input type="text" class="form-control" id="author" name="author" placeholder="Written by " required >
+            
+            <div class="row mb-3">
+                <label for="author" class="col-sm-2 col-form-label">Author</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" name="author" id="author" placeholder="Written by " required>
+                </div>
             </div>
 
-            <div class="form-group">
-                <label for="subject">Subject</label>
-                <input type="text" class="form-control" id="subject" name="subject" placeholder="Entry subject line " required >
+            <div class="row mb-3">
+                <label for="subject" class="col-sm-2 col-form-label">Subject</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" name="subject" id="subject" placeholder="Entry subject line " required>
+                </div>
             </div>
         
             <div class="form-group">
@@ -34,8 +38,9 @@
             </div>
 
             <div class="form-group">
-                <input type="submit" value="Post Entry" class="btn btn-outline-primary">
+                <input type="submit" value="Post Entry" class="btn rounded-pill btn-outline-primary shadow">
             </div>
+      
         </form>
 
 
