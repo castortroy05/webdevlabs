@@ -21,18 +21,20 @@
             </a>     
         </div>
    
-        <div class ="mx-auto card-columns">
+        <div class ="card-deck">
         {{#entries}}        
-            <div class="card shadow" style="min-height: 7rem; min-width: 30rem; max-width: 30rem; border-radius:5%">
+            <div class="card shadow" style="min-height: 7rem; min-width: 25rem; max-width: 25rem; border-radius:5%">
                 <div class="card-header">
                     {{subject}}
-                </div>
+                <div class="badge shadow badge-pill pull-right badge-light">
+                    {{published}}
+                </div></div>
                 <div class="card-body">
                  <p class="card-text" style="min-height: 5rem;">
                 {{contents}}
                 </p>
-            <p class="card-footer">
-                Written by {{author}}, on {{published}}
+            <p class="card-footer badge shadow badge-pill pull-right badge-light">
+                Written by {{author}}
             </p>
         </div>
     </div>
