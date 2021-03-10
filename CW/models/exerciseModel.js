@@ -15,23 +15,6 @@ constructor(dbFilePath) {
 
 //a function to seed the database
 init() {
-    this.db.insert({
-        exercise: 'Walk',
-        details: 'nice',
-        started: '2020-02-16',
-        author: 'Peter'
-    })
-    //for later debugging
-    console.log('db entry Peter inserted');
-
-    this.db.insert({
-        exercise: "Squats",
-        details: '30 weighted squats',
-        started: '2020-02-18',
-        author: 'Ann'
-    })
-    //for later debugging
-    console.log('db entry Anne inserted');
 
 }
 
@@ -58,8 +41,8 @@ var goal = {
     author: author,
     exercise: exercise,
     details: details,
-    started: new Date().toISOString().split('T')[0],
-    endDate: endDate
+    endDate: endDate.toISOString().split('T')[0],
+    started: new Date().toISOString().split('T')[0]
 
 }
 console.log('goal created', entry);
