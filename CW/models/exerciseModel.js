@@ -52,14 +52,14 @@ getAllGoals(){
     })
 }
 
-addGoal(author, exercise, details) {
+addGoal(author, exercise, details, endDate) {
 
 var goal = {
     author: author,
     exercise: exercise,
     details: details,
     started: new Date().toISOString().split('T')[0],
-    completed: new Date().toISOString().split('T')[0]
+    endDate: endDate
 
 }
 console.log('goal created', entry);

@@ -1,13 +1,13 @@
 const { response } = require('express');
-const GuestbookDAO = require('../models/guestbookModel');
+const GoalsDAO = require('../models/exerciseModel');
 
-const db = new GuestbookDAO();
+const db = new GoalsDAO();
 
-exports.entries_list = function(req, res) {
-    db.getAllEntries().then((list) => {
-        res.render('entries', {
-            'title': 'Guest Book',
-            'entries': list
+exports.goals_list = function(req, res) {
+    db.getAllGoals().then((list) => {
+        res.render('goals', {
+            'title': 'Exercise Goals',
+            'goals': list
         });
         console.log('Promise Resolved');
     }).catch((err)=>{
@@ -15,12 +15,9 @@ exports.entries_list = function(req, res) {
     })
 }
 
-exports.peters_entries_list = function(req, res) {
-    res.send('<h1>Not yet implemented: show a list of guestbook entries.</h1>');
-    db.getPetersEntries();
-}
 
-exports.post_new_entry = function(req, res) {
+
+exports.post_new_goal = function(req, res) {
     if (!req.body.author) {
         response.status(400).send("Entries must have an author.");
         return;
@@ -30,11 +27,11 @@ exports.post_new_entry = function(req, res) {
     
 }
 exports.landing_page = function(req, res) {
-    db.init();
-    db.getAllEntries().then((list) => {
-        res.render('entries', {
-            'title': 'Guest Book',
-            'entries': list
+    //db.init();
+    db.getAllGoals().then((list) => {
+        res.render('goals', {
+            'title': 'Exercise Goals',
+            'goals': list
         });
         console.log('Promise Resolved');
     }).catch((err)=>{
@@ -46,7 +43,7 @@ exports.about_page = function(req, res) {
     res.send('<h1>Not yet implemented: show an about page</h1>');
 }
 
-exports.new_entry = function(req, res) {
-    res.render('newEntry', { 'title': 'Guest Book'})
+exports.new_goal = function(req, res) {
+    res.render('newGoal', { 'title': 'Guest Book'})
     
 }
