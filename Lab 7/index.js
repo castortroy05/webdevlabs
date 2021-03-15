@@ -10,9 +10,7 @@ const app = express();
 
 const public = path.join(__dirname, 'public');
 
-const bodyParser = require('body-parser')
-
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(express.urlencoded({extended: false}));
 
 app.use(express.static(public));
 

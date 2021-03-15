@@ -30,7 +30,7 @@ exports.post_new_entry = function(req, res) {
     
 }
 exports.landing_page = function(req, res) {
-    //db.init();
+    db.init();
     db.getAllEntries().then((list) => {
         res.render('entries', {
             'title': 'Guest Book',

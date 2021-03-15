@@ -15,14 +15,19 @@ exports.goals_list = function(req, res) {
     })
 }
 
-
+exports.seed = function(req, res) {
+    db.init();
+    console.log('Database seeded')
+    res.redirect('/');
+}
 
 exports.post_new_goal = function(req, res) {
     if (!req.body.author) {
         response.status(400).send("Entries must have an author.");
         return;
-    }
-        db.addEntry(req.body.author, req.body.subject, req.body.contents);
+    }  
+        console.log('attempting to add in post ', req.body.author, req.body.exercise, req.body.details, req.body.endDate)
+       db.addGoal(req.body.author, req.body.exercise, req.body.details, req.body.endDate);
         res.redirect('/');
     
 }
@@ -44,6 +49,7 @@ exports.about_page = function(req, res) {
 }
 
 exports.new_goal = function(req, res) {
-    res.render('newGoal', { 'title': 'Guest Book'})
+    res.render('newGoal', { 'title': 'Add a new goal'})
     
 }
+
