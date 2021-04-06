@@ -9,6 +9,12 @@ const expressSession = require('express-session')({
     resave: false,
     saveUninitialized: false
   });
+  
+app.use(bodyParser.json());
+
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(expressSession);
 
 const passport = require('passport');
 
@@ -34,6 +40,8 @@ app.set('view engine', 'mustache');
 
 app.use('/', router);
 
-app.listen(8080, () => {
-    console.log('Server started on port 8080. Ctrl & C to quit');
+const port = process.env.PORT || 8080
+
+app.listen(port, () => {
+    console.log('Server started on port ' + port + ' Ctrl & C to quit');
 })

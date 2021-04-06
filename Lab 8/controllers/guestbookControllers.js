@@ -18,21 +18,7 @@ exports.entries_list = function(req, res) {
     })
 }
 
-controller.get('/filter/:author', function(request, response){
-    console.log("filtering ", request.params.author);
-    let user = request.params.author;
-    dao.getEntryByUser(user)
-    .then((entries) => {
-        response.render("entries", {
-            "title": "Guest Book",
-            "entries": entries
-        });
-    })
-    .catch((err) => {
-        console.log('Error: ')
-        console.log(JSON.stringify(err))
-    });
-})
+
 
 exports.peters_entries_list = function(req, res) {
     res.send('<h1>Not yet implemented: show a list of guestbook entries.</h1>');
@@ -62,6 +48,12 @@ exports.post_new_entry = function(req, res) {
         res.redirect('/');
     
 }
+
+exports.delete_entry = function(req, res){
+    console.log('id in delete_entry', req.params.id);
+    res.send('<h1> Delete entry called </h1>')
+}
+
 exports.landing_page = function(req, res) {
     db.init();
     db.getAllEntries().then((list) => {

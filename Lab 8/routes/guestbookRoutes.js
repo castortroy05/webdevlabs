@@ -4,6 +4,9 @@ const router = express.Router();
 
 const controller = require('../controllers/guestbookControllers.js');
 
+let DAO = require('../models/guestbookModel.js');
+let dao = new DAO();
+
 router.get("/", controller.landing_page);
 
 router.get('/guestbook', controller.entries_list);
@@ -18,10 +21,9 @@ router.get('/peter', controller.peters_entries_list);
 
 router.get('/posts/:author', controller.show_user_entries);
 
+roouter.get('/delete', controller.delete_entry);
 
-let DAO = require('../models/guestbookModel.js');
-let dao = new DAO();
-controller.get('/filter/:author', function(request, response){
+router.get('/filter/:author', function(request, response){
     console.log("filtering ", request.params.author);
     let user = request.params.author;
     dao.getEntryByUser(user)

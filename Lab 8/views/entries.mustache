@@ -25,18 +25,24 @@
         {{#entries}}        
             <div class="card shadow" style="min-height: 7rem; min-width: 25rem; max-width: 25rem; border-radius:5%">
                 <div class="card-header">
-                    {{subject}}
-                <div class="badge shadow badge-pill pull-right badge-light">
-                    {{published}}
-                </div></div>
+                    <span class="card-title text-xl-left">
+                    {{subject}}</span>
+                    <span class="text-muted pull-right">
+                        {{published}}
+                    </span>
+               </div>
                 <div class="card-body">
                  <p class="card-text" style="min-height: 5rem;">
                 {{contents}}
                 </p>
-            <p class="card-footer badge shadow badge-pill pull-right badge-light">
-                Written by <a href="/posts/{{author}}">{{author}}</a>
-            </p>
-        </div>
+            </div>
+            <div class="card-footer">
+                <span class=" text-left text-muted">
+                Written by <a href="/posts/{{author}}">{{author}}</a></span>
+                
+                <span><a href='/delete/{{_id}}' alt='delete this entry'><i class='fa fa-trash pull-right' style='font-size:24px'></i></a> </span>
+            </div>
+        
     </div>
 
         <hr>

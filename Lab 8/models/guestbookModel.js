@@ -108,6 +108,15 @@ this.db.insert(entry, function(err, doc) {
 })
 }
 
+deleteEntry(id){
+this.db.remove({_id: id} ,{}, function(err, rem) {
+    if (err) {
+        console.log('error in deleteEntry', err);
+    } else {
+        console.log(rem, 'entries deleted');
+    }
+})
+}
 }
 
 //make the module visible outside
